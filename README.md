@@ -4,7 +4,7 @@ This repository contains an R script for automated processing, gating, clusterin
 
 ## **Requirements**
 
-- R version ≥ 4.3
+- R version ≥ 4.1
 - Packages:
   - Bioconductor: `flowCore`, `flowWorkspace`, `openCyto`, `flowAI`, `flowVS`, `flowClust`
   - CRAN: `ggcyto`, `ggplot2`, `dplyr`, `tidyr`, `reshape2`, `FlowSOM`, `ConsensusClusterPlus`, `umap`, `Rtsne`, `plotly`, `htmlwidgets`, `pheatmap`, `sessioninfo`
