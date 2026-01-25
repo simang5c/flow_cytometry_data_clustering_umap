@@ -1,3 +1,4 @@
+# Load all libraries 
 library(flowCore)
 library(flowWorkspace)
 library(openCyto)
@@ -38,11 +39,9 @@ if (all(file.exists(sampleplan$Filenames))) {
 }
 
 
-
-# Markers that will be used for clustering CD45pos cells
-
+# Update filename 
 for (i in seq_along(fs)) {
-  # Update FILENAME inside flowFrame
+  # Update filename inside flowFrame
   fs[[i]]@description[["FILENAME"]] <- sampleplan$Samples[i]
 }
 
@@ -73,6 +72,19 @@ stats_table <- data.frame(
 
 # see the table
 stats_table
+
+# The ararcsinh transformation formula is:
+#       y=arcsinh(x/c)
+  
+# x = raw fluorescence intensity
+# c = cofactor
+# y = transformed intensity
+
+# The goal of the cofactor is to:
+# Keep the negative and low-intensity background near zero roughly linear
+# Avoid compressing the positive population excessively
+# Stabilize variance across events
+
 
 # see column information
 column_informations<-pData(parameters(fs_qc[[1]]))
@@ -366,7 +378,7 @@ counts<-counts[,c("Samples","After_QC",colnames(counts)[2:5])]
 
 write.table(counts, "cell_counts.txt",sep = "\t", row.names = F)
 ####################################################################################################
-# Cleaning
+# Cleaning and extracting
 clean_frames <- lapply(seq_along(gs), function(i) {
   gh <- gs[[i]]
   samp <- sampleNames(gs)[i]
