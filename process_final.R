@@ -91,14 +91,14 @@ column_informations<-pData(parameters(fs_qc[[1]]))
 
 # manual cofactors for scaling
 manualfactors <- c(
-  "FITC.A"         = 800,    # CD15
-  "BV421.A"        = 3600,   # CD11b
-  "PE.Cy7.A"       = 900,    # CD8
-  "APC.A"          = 220,    # CD3
-  "BV605.A"        = 1000,   # CD4
-  "PE.A"           = 500,    # CD56
-  "Alexa.700.A"    = 200,    # CD19
-  "PerCP.Cy5.5.A"  = 1600    # CD45
+  "FITC.A"         = 50,    # CD15
+  "BV421.A"        = 1450,   # CD11b
+  "PE.Cy7.A"       = 30,    # CD8
+  "APC.A"          = 30,    # CD3
+  "BV605.A"        = 250,   # CD4
+  "PE.A"           = 100,    # CD56
+  "Alexa.700.A"    = 15,    # CD19
+  "PerCP.Cy5.5.A"  = 200    # CD45
 )
 
 # variance transformation
