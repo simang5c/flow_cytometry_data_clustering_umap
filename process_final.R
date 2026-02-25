@@ -1,3 +1,11 @@
+# Note:
+# This R script performs the initial round of data processing and clustering.
+# Subsequent analysis includes multiple iterative rounds of reclustering and backgating
+# to further refine population structure and systematically remove problematic or low-quality populations.
+# Backgating, as well as manual cluster identification and confirmation, were performed
+# in collaboration with an experienced flow cytometry expert.
+######################################################################################################
+
 # Load all libraries 
 library(flowCore)
 library(flowWorkspace)
